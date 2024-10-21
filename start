@@ -1,5 +1,15 @@
 #! /bin/sh
 
+if [ ! command -v wget 2>&1 >/dev/null ]; then
+    echo "wget could not be found, can not proceed"
+    exit 1
+fi
+
+if [ ! command -v unzip 2>&1 >/dev/null ]; then
+    echo "unzip could not be found, can not proceed"
+    exit 1
+fi
+
 if [ ! -f ./torch-server.zip ]; then
   wget https://build.torchapi.com/job/Torch/job/master/lastSuccessfulBuild/artifact/bin/torch-server.zip
 fi

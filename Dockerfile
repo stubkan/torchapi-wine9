@@ -22,7 +22,7 @@ RUN \
   mkdir -pm755 /etc/apt/keyrings && \
   wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key && \
   # add repositories
-  echo "deb http://ftp.us.debian.org/debian bookworm main non-free" > /etc/apt/sources.list.d/non-free.list && \
+  echo "deb http://ftp.debian.org/debian bookworm main non-free" > /etc/apt/sources.list.d/non-free.list && \
   wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/bookworm/winehq-bookworm.sources && \
   apt-get install -y procps htop winbind x11vnc net-tools openbox
 RUN \
